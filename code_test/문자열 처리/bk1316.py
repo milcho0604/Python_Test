@@ -7,7 +7,7 @@ def search(word):
     for char in word:
         # 현재 문자 char와 이전 문자 before 같지 않다면 새로운 문자 등장. 즉, 연속하지 않음
         if(char != before):
-            # char가 visited 집합에 존재하지 않았던 새로운 문자라면
+            # char가 visited 집합에 존재하지 않았던 새로운 문자라면 
             if(char not in visitied):
                 visitied.add(char) # visited 집합에 char를 넣고
                 before = char # before는 다음을 위해 현재 문자 char가 된다
