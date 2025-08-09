@@ -3,10 +3,10 @@ import sys
 # sys.stdin은 입력 창구와 같음
 for line in sys.stdin:
     line = line.rstrip('\n') # 줄바꿈 제거
-    lower = 0 
-    upper = 0
-    digit = 0
-    space = 0
+    lower = 0 # 소문자
+    upper = 0 # 대문자
+    digit = 0 # 숫자
+    space = 0 # 공백
     for char in line:
         if char.islower():
             lower +=1
