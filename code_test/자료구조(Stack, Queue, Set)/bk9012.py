@@ -1,4 +1,4 @@
-# 괄호 검사 함수
+# 괄호 검사 함수 -> temp는 앞에 문자열
 def check(temp):
     stack = []
     for i in temp:
@@ -9,6 +9,7 @@ def check(temp):
                 stack.pop()
             else:
                 return False # stack이 비었는데 ')'라면 False retrun
+    # temp 문자열 ()()을 전부 순회했는데도 stack이 비어있지 않다면 False return
     if stack:
         return False
     else:
@@ -21,7 +22,9 @@ n = int(input())
 result = []
 
 for _ in range(n):
+    # ()() 와 같은 전체 문자열을 입력
     temp = input().strip()
+    # 이 문자와 함께 check 함수 호출
     isVaild = check(temp)
     if isVaild:
         result.append('YES')
