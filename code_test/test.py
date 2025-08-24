@@ -1,33 +1,30 @@
-# 괄호 검사 함수
-def check(temp):
-    stack = []
-    for i in temp:
-        if i == '(':
-            stack.append(i)
-        else: # ')'인 경우
-            if stack: # stack 비어있지 않다면 pop
-                stack.pop()
-            else:
-                return False # stack이 비었는데 ')'라면 False retrun
-    if stack:
-        return False
-    else:
-        return True
+# 첫 줄에서 n, m을 함께 받기
+n, m = map(int, input().split())
 
+# arr1 입력
+arr1 = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    arr1.append(row)
 
+# arr2 입력
+arr2 = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    arr2.append(row)
 
-n = int(input())
-# 결과를 담을 배열
+# 결과 배열 초기화 (n x m)
 result = []
+for i in range(n):
+    result.append([0] * m)
 
-for _ in range(n):
-    temp = input().strip()
-    isVaild = check(temp)
-    if isVaild:
-        result.append('YES')
-    else:
-        result.append('NO')
+# 원소별 합산
+for i in range(n):
+    for j in range(m):
+        result[i][j] = arr1[i][j] + arr2[i][j]
 
-
-for i in range(len(result)):
-    print(result[i])
+# 출력 (행렬 형태)
+for i in range(n):
+    for j in range(m):
+        print(result[i][j], end=" ")
+    print()

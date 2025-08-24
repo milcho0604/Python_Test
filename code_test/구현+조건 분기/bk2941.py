@@ -2,9 +2,7 @@ st = input().strip()
 count = 0
 i = 0
 
-# len은 길이 측정이 가능
 for _ in range(len(st)):
-    # i가 문자열 길이가 되면 break
     if i >= len(st):
         break
 
